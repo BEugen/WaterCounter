@@ -1,0 +1,8 @@
+<component name="libraryTable">
+  <library name="MicroPython" type="python">
+    <CLASSES>
+      <root url="file://$APPLICATION_PLUGINS_DIR$/intellij-micropython/typehints/esp8266/latest" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
