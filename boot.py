@@ -5,7 +5,7 @@ def do_connect():
     if not sta_if.isconnected():
         print('connecting to network...')
         sta_if.active(True)
-        sta_if.connect('dsl', '0x323633EAECF2F2ECEEE2E3F3F0EAE3F0E2F8E3383737343338ED363837')
+        sta_if.connect('dsl', '')
         while not sta_if.isconnected():
             pass
     print('network config:', sta_if.ifconfig())
