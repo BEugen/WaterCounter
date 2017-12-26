@@ -1,4 +1,4 @@
-import config, counter, temperature
+import config, temperature
 import time
 import machine
 
@@ -8,12 +8,14 @@ def main():
     try:
         conf_class = config.Config()
         conf_data = conf_class.load_config()
-        counter_class = counter.Counter(16, 5, conf_data)
-        temperature_class = temperature.Temperature(12, 4, conf_data)
+        #counter_class = counter.Counter(9, 10, conf_data)
+        temperature_class = temperature.Temperature(4, 13, conf_data)
+        #screen_class = screen.Screen(conf_data)
         while True:
             temperature_class.temperature()
+            print(conf_data)
+            #screen_class.write_display()
             time.sleep_ms(1000)
-            print('write ok')
     except SyntaxError:
         print('main error')
     except TypeError:
