@@ -13,9 +13,10 @@ def main():
         #screen_class = screen.Screen(conf_data)
         while True:
             temperature_class.temperature()
-            print(conf_data)
+            conf_data['p']['l'] = temperature_class.temp_level()
             #screen_class.write_display()
             time.sleep_ms(1000)
+            print(conf_data)
     except SyntaxError:
         print('main error')
     except TypeError:
