@@ -51,7 +51,7 @@ class Display:
     _ENCODE_POS = ">HH"
     _DECODE_PIXEL = ">BBB"
 
-    def __init__(self, width, height):
+    def __init__(self, width=240, height=320):
         self.width = width
         self.height = height
         self.init()
@@ -129,7 +129,7 @@ class Display:
 
 
 class DisplaySPI(Display):
-    def __init__(self, spi, dc, cs=None, rst=None, width=1, height=1):
+    def __init__(self, spi, dc, cs=None, rst=None, width=240, height=320):
         self.spi = spi
         self.cs = cs
         self.dc = dc
