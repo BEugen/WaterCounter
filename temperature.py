@@ -6,8 +6,9 @@ from machine import Pin
 
 class Temperature(object):
 
-    def __init__(self, ow_pin, wh_en_pin, config):
+    def __init__(self, ow_pin, wh_en_pin, config, screen):
         self.config = config
+        self.screen = screen
         self.ds = ds18x20.DS18X20(onewire.OneWire(Pin(ow_pin)))
         self.wh_en_pin = machine.Pin(wh_en_pin, machine.Pin.IN, machine.Pin.PULL_UP)
         self.wh_en_pin.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=self.waterheat_end)
@@ -32,8 +33,10 @@ class Temperature(object):
                 if self.config['t'][x]['id'] != 0:
                     self.config['t'][x]['max'] = self.config['t'][x]['t']
             self.config['p']['pw'] = False
+
         else:
             self.config['p']['pw'] = True
+        self.screen.hot_indication(p.value())
 
     def watercold_end(self):
         for x in self.config['t']:

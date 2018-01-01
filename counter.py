@@ -24,4 +24,8 @@ class Counter(object):
     def get_counter(self):
         return self.hot_counter, self.cold_counter
 
+    def correct_counter(self, hot, cold):
+        self.hot_counter = hot
+        self.cold_counter = cold
+
 

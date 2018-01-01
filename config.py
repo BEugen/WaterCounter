@@ -16,7 +16,7 @@ class Config(object):
             rs = ujson.loads(f.read())
             f.close()
         else:
-            rs = {'p': {'hot': 0.0, 'cold': 0.0, 'l': 0.0, 'pw': False},
+            rs = {'p': {'hot': 3.899, 'cold': 41.936, 'l': 0.0, 'pw': False},
                   't': {'10f8adae02080072': {'t': 0.0, 'id': 1, 'min': 0.0, 'max': 0.0},
                     '1046e4ae0208007c': {'t': 0.0, 'id': 2, 'min': 0.0, 'max': 0.0},
                     '10bbaeae02080010': {'t': 0.0, 'id': 3, 'min': 0.0, 'max': 0.0},
